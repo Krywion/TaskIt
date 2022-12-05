@@ -35,4 +35,10 @@ public class HomeController {
         return "taskList";
     }
 
+    @RequestMapping("/register")
+    public String register() {
+        return "registerForm";
+    }
+
+
 }

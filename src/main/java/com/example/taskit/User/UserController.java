@@ -3,11 +3,10 @@ package com.example.taskit.User;
 
 import com.example.taskit.Task.Task;
 import com.example.taskit.Task.TaskRepository;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class UserController {
@@ -31,17 +30,12 @@ public class UserController {
             return "error";
         }
 
-        User user = new User();
 
-        user.setFirstName(firstName);
-        user.setLastName(lastName);
-        user.setEmail(email);
-
-
-        System.out.println("Przypisuję zadanie o nazwie " + task.getName() + " do użytkownika " + user.getFirstName() + " " + user.getLastName());
+        //System.out.println("Przypisuję zadanie o nazwie " + task.getName() + " do użytkownika " + user.getFirstName() + " " + user.getLastName());
 
         // Dodajemy zadanie do modelu i przekierowujemy na stronę profilu zadania:
         model.addAttribute("task", task);
         return "task";
     }
+
 }
