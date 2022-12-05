@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <!--
+  Napisz galerie która wyświetla wszystkie zadania z bazy danych.
+  -->
+  <h1>Zadania</h1>
+
+  <ul>
+      <li th:each="task : ${tasks}">
+          <a th:href="@{/task/{id}(id=${task.id})}" th:text="${task.name}"></a>
+          <p th:text="${task.description}"></p>
+      </li>
+  </ul>
+
+</body>
+</html>
